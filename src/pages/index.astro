@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IntroSection from "../components/IntroSection.astro";
+import Buzzwords from "../components/Buzzwords.astro";
+import Customers from "../components/Customers.astro";
+import Deal from "../components/Deal.astro";
+import Squares from "../components/Squares.astro";
+import Gasell from "../components/Gasell.astro";
+import Contact from "../components/Contact.astro";
+import PeopleContainer from "../components/PeopleContainer.astro";
+import InstaContainer from "../components/InstaContainer.astro";
+
+import People from "../components/People";
+import SalarySlider from "../components/SalarySlider";
+import Insta from "../components/Insta";
+
+import woman from "../emojis/woman.png";
+import house from "../emojis/house.png";
+
+import people from "../peoples";
+---
+
+<Layout title="Syson - Frihet, bra häng och schysst lön">
+  <IntroSection id="focus" title="Fokus på dig" emoji={woman}>
+    <p>
+      Hos oss får du friheten att fokusera på det du tycker om. Jobba på roliga
+      projekt hos bra kunder. Umgås avslappnat och resa till nya platser.
+      Säljarbete, administration och andra distraktioner kan du lägga åt sidan.
+    </p>
+    <p>
+      Du kan lägga din energi på uppdraget och på att lära dig nya saker. Att
+      jobba 8 timmar om dagen och sen kunna tänka på annat ser vi som en
+      självklarhet.
+    </p>
+  </IntroSection>
+  <PeopleContainer>
+    <!-- we have to client only render SalarySlider as the order is randomized -->
+    <People client:only="solid" />
+  </PeopleContainer>
+  <Buzzwords />
+  <Deal>
+    <SalarySlider client:idle />
+  </Deal>
+  <Squares />
+  <Customers />
+  <Gasell />
+  <IntroSection title="Bäst, inte störst" emoji={house} id="best">
+    <p>
+      Vi är ett konsultbolag som utvecklar system, hemsidor och appar. Vi jobbar
+      i roller som utvecklare, testare, tech lead och scrum master. Men det är
+      inte det som gör Syson speciellt.
+    </p>
+    <p>
+      Vi är ett litet bolag och vi gillar det. Vi är idag {people.length} personer.
+      Som en liten skolklass eller ett fotbollslag ungefär. Några fler vill vi bli,
+      men inte många.
+    </p>
+    <p>
+      Mycket blir bättre när man är mindre. Vi lär känna varandra bättre, det
+      blir lättare att genomföra idéer och varje person blir lite viktigare.
+    </p>
+  </IntroSection>
+  <InstaContainer>
+    <Insta client:visible />
+  </InstaContainer>
+  <Contact />
+</Layout>

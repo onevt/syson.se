@@ -1,0 +1,199 @@
+---
+import Footer from "../components/Footer.astro";
+import ArticleHeader from "../components/ArticleHeader.astro";
+import Header from "../components/Header.astro";
+
+export interface Props {
+  title: string;
+  article?: boolean;
+}
+
+const { title, article } = Astro.props;
+---
+
+
+<html lang="sv">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content="Syson - Frihet, bra häng och schysst lön">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#59b89d" />
+  <meta
+    name="apple-mobile-web-app-title"
+    content="Syson - Frihet, bra häng och schysst lön"
+  />
+  <meta
+    name="application-name"
+    content="Syson - Frihet, bra häng och schysst lön"
+  />
+  <meta name="msapplication-TileColor" content="#59b89d" />
+  <meta name="theme-color" content="#59b89d" />
+
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+
+  <body>
+    {article && (
+      <ArticleHeader />
+      <main class="article"><slot/></main>
+    )}
+
+    {!article && (
+      <Header />
+      <main><slot/></main>
+    )}
+
+    <Footer />
+    <style is:global>
+      :root {
+        --gum-leaf: #aad2bd;
+        --lily-blue: #edfaff;
+        --tradewind: #59b89d;
+        --tradewind-transparent: rgba(89, 184, 157, 0.9);
+        --mirage: #1d3541;
+        --citrus: #ecd579;
+        --cashmere: #e8b5aa;
+        --westar: #dbdad0;
+        --kangaroo: #dadacf;
+        --body-max-width: 1106px;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "ibm-plex-mono", monospace, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+          "Droid Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: var(--mirage);
+      }
+
+      main {
+        min-height: 100vh;
+      }
+
+      main.article {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 32px;
+      }
+
+      @media (min-width: 1024px) {
+        main.article {
+          width: 794px;
+          padding-left: 96px;
+          padding-right: 96px;
+        }
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "octarine", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+        margin-top: 0;
+      }
+
+      h1,
+      h2 {
+        font-size: 36px;
+        line-height: 1;
+      }
+
+      @media (min-width: 768px) {
+        h1,
+        h2 {
+          font-size: 56px;
+        }
+      }
+
+      h3 {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .container {
+        max-width: var(--body-max-width);
+        padding: 0 16px;
+        margin: 0 auto;
+      }
+
+      button {
+        font-family: monospace, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+      }
+
+      a {
+        color: var(--mirage);
+      }
+
+      a:visited {
+        color: var(--mirage);
+      }
+
+      @font-face {
+        font-family: "octarine";
+        src: url("./fonts/octarine-lightoblique-webfont.woff2") format("woff2"),
+          url("./fonts/octarine-lightoblique-webfont.woff") format("woff");
+        font-weight: lighter;
+        font-style: oblique;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "octarine";
+        src: url("./fonts/octarine-boldoblique-webfont.woff2") format("woff2"),
+          url("./fonts/octarine-boldoblique-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: oblique;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "octarine";
+        src: url("./fonts/octarine-light-webfont.woff2") format("woff2"),
+          url("./fonts/octarine-light-webfont.woff") format("woff");
+        font-weight: lighter;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "octarine";
+        src: url("./fonts/octarine-bold-webfont.woff2") format("woff2"),
+          url("./fonts/octarine-bold-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "ibm-plex-mono";
+        src: url("./fonts/IBMPlexMono-Text.woff2") format("woff2"),
+          url("./fonts/IBMPlexMono-Text.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: fallback;
+      }
+    </style>
+  </body>
+
+  <script>
+    console.log("%c👻", "font-size: 100px");
+    console.log(
+      "%cTja! Fan vad kul att se dig här. Ser det OK ut tycker du eller är det bara massa fulhack? Messa till 073-047 34 41 och säg vad du tycker! 👍",
+      "color: pink; font-size: 12px;"
+    );
+  </script>
+</html>

@@ -1,0 +1,67 @@
+---
+import jsLogo from "../images/js-logo.svg";
+import reactLogo from "../images/react-logo.svg";
+import javaLogo from "../images/java-logo.svg";
+import netLogo from "../images/net-logo.svg";
+import awsLogo from "../images/aws-logo.svg";
+import nodeLogo from "../images/node-logo.svg";
+import typescriptLogo from "../images/typescript-logo.svg";
+---
+
+<section id="buzzwords">
+  <div class="container content">
+    <h1 class="title">Tekniker vi gillar</h1>
+    <div class="logos">
+      <img class="logo" src={jsLogo} alt={"JavaScript"} title={"JavaScript"} />
+      <img class="logo" src={reactLogo} alt={"React"} title={"React"} />
+      <img class="logo" src={javaLogo} alt={"Java"} title={"Java"} />
+      <img class="logo" src={netLogo} alt={".NET"} title={".NET"} />
+      <img class="logo" src={awsLogo} alt={"AWS"} title={"AWS"} />
+      <img
+        class="logo"
+        src={typescriptLogo}
+        alt={"TypeScript"}
+        title={"TypeScript"}
+      />
+      <img class="logo" src={nodeLogo} alt={"Node"} title={"Node"} />
+    </div>
+  </div>
+</section>
+
+<style>
+  #buzzwords {
+    background-color: var(--mirage);
+    min-width: 100%;
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    color: var(--tradewind);
+  }
+
+  .logos {
+    color: var(--westar);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-right: 24px;
+    margin-bottom: 24px;
+    min-width: 100px;
+    max-height: 100px;
+  }
+
+  @media (min-width: 1024px) {
+    .logos {
+      justify-content: space-between;
+    }
+  }
+</style>

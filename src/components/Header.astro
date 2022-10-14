@@ -1,0 +1,124 @@
+---
+import landingPortraitSmallWebp from "../images/landing-portrait.webp";
+import landingLandscapeWebp from "../images/landing-landscape.webp";
+import landingLandscape from "../images/landing-portrait.jpg";
+import landingPortraitSmall from "../images/landing-portrait.jpg";
+import wavingHand from "../emojis/waving-hand.png";
+import logo from "../images/logo.png";
+import logoGreen from "../images/logo-green.png";
+import video_av1 from "../video/desktop_nosound.av1.mp4";
+import video_h264 from "../video/desktop_nosound.h264.mp4";
+import video_hevc from "../video/desktop_nosound.hevc.mp4";
+
+import Emoji from "../components/Emoji"; // Solid
+---
+
+<header>
+  <picture class="banner">
+    <source
+      media="(min-width: 450px)"
+      srcset={landingLandscapeWebp}
+      type="image/webp"
+    />
+    <source
+      media="(min-width: 450px)"
+      srcset={landingLandscape}
+      type="image/jpeg"
+    />
+    <source srcset={landingPortraitSmallWebp} type="image/webp" />
+    <source srcset={landingPortraitSmall} type="image/jpeg" />
+    <img src={landingPortraitSmallWebp} alt="" />
+  </picture>
+  <video autoplay loop muted playsinline>
+    <!-- Chrome/Firefox -->
+    <source src={video_av1} type="video/mp4; codecs=av01.0.05M.08,opus" />
+    <!-- Safari -->
+    <source src={video_hevc} type="video/mp4; codecs=hvc1" />
+    <!-- Legacy -->
+    <source src={video_h264} type="video/mp4; codecs=avc1.4D401E,mp4a.40.2" />
+  </video>
+  <div class="content">
+    <picture>
+      <source srcset={logo} media="(min-width: 1024px)" />
+      <img src={logoGreen} class="logo" alt="Syson logo" />
+    </picture>
+    <div class="headline">
+      <h1>Frihet, bra häng och schysst lön</h1>
+      <p>
+        Hej! <Emoji src={wavingHand} /> Vi är konsulter i Stockholm, duktiga inom
+        systemutveckling och test
+      </p>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    position: relative;
+    height: 145vmin;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: var(--westar);
+  }
+  video {
+    display: none;
+  }
+  .banner > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+    display: unset;
+  }
+  .headline {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    color: white;
+    background-color: var(--tradewind-transparent);
+    padding: 16px 16px;
+  }
+  .content {
+    padding: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .logo {
+    width: 150px;
+  }
+
+  @media screen and (min-width: 768px) {
+    header {
+      height: 85vmin;
+    }
+
+    .banner > img {
+      object-position: center;
+    }
+
+    .headline {
+      max-width: 40vmax;
+      left: 32px;
+      right: auto;
+      padding: 16px 48px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    video {
+      display: unset;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: left;
+    }
+
+    .banner {
+      display: none;
+    }
+  }
+</style>

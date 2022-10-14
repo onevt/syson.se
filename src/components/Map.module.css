@@ -1,9 +1,0 @@
-.map {
-  height: 60vh;
-}
-
-@media (min-width: 768px) {
-  .map {
-    height: 25vmax;
-  }
-}

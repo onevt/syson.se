@@ -1,0 +1,54 @@
+---
+import footerLogo from "../images/footerLogo.svg";
+---
+
+<footer class="footer">
+  <div class="grid container">
+    <div>
+      <p>hej@syson.se</p>
+    </div>
+    <div>
+      <p>
+        <strong>Postadress</strong>
+      </p>
+      <p>
+        Syson AB
+        <br />
+        Kivra: 556934-1851
+        <br />
+        106 31 Stockholm
+      </p>
+    </div>
+    <div>
+      <p>Orgnr: 556934-1851</p>
+    </div>
+    <div class="icon">
+      <img src={footerLogo} alt="Syson" />
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--mirage);
+    color: white;
+    padding: 32px;
+  }
+
+  .grid {
+    display: grid;
+    grid-gap: 16px;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr 100px;
+    }
+  }
+</style>

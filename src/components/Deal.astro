@@ -1,0 +1,24 @@
+---
+import handshake from "../emojis/handshake.png";
+import Emoji from "./Emoji"; // Solid
+---
+
+<section id="deal">
+  <div class="container">
+    <h2>
+      En schysst deal <Emoji src={handshake} />
+    </h2>
+    <p>
+      Vår lönemodell är enkel. Du får <b>70%</b> av timpriset när du har ett uppdrag,
+      annars är du garanterad 26 000 kr. Att hitta uppdraget eller förhandla om timpriset
+      behöver du inte lägga någon energi på själv, det löser vi.
+    </p>
+    <p>
+      Vi räknar med att du tar minst sex veckors semester, men du har friheten
+      att ta mer om du vill. Vill du ha en tjänstebil, spara mer pengar till
+      pensionen eller något annat så hjälper vi dig med det.
+    </p>
+    <p>Alla har samma deal, nyanställd som veteran.</p>
+    <slot />
+  </div>
+</section>

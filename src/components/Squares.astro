@@ -1,0 +1,42 @@
+---
+import pencil from "../emojis/pencil.png";
+import chart from "../emojis/chart.png";
+import woman from "../emojis/woman_office_worker.png";
+import Square from "./Square.astro";
+---
+
+<section id="links">
+  <div class="container">
+    <Square
+      emoji={pencil}
+      title="Lönemodellen i detalj"
+      description="Lägg till mer semester, pension, mm"
+      color="tradewind"
+      url="/lonemodell"
+    />
+    <Square
+      emoji={woman}
+      title="Hur är konsultlivet?"
+      description="Läs mer"
+      color="cashmere"
+      url="/konsultlivet"
+    />
+    <Square
+      emoji={chart}
+      title="Hur vi mår är viktigast"
+      description="Läs mer"
+      color="citrus"
+      url="/gladbladet"
+    />
+  </div>
+</section>
+
+<style>
+  @media (min-width: 900px) {
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 32px;
+    }
+  }
+</style>

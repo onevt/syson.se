@@ -1,0 +1,75 @@
+---
+import sysonman from "../images/sysonman.png";
+---
+
+<section id="hello">
+  <div class="container">
+    <h2>Säg hej!</h2>
+    <div class="contact">
+      <div class="left">
+        <p>Vi vill alltid höra från trevligt folk.</p>
+        <p>
+          Fikasugen? Vi sitter på The Parks lokaler i City, Vasastan och
+          Södermalm.
+        </p>
+      </div>
+      <div class="list">
+        <div>Soroush</div>
+        <a href="tel:0730473441">073-047 34 41</a>
+        <div></div>
+        <a href="mailto:hej@syson.se">hej@syson.se</a>
+      </div>
+      <div class="sysonmanContainer">
+        <img class="sysonman" src={sysonman} alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left {
+    padding-top: 32px;
+    max-width: 300px;
+  }
+
+  .left p {
+    margin-top: 0;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    padding-top: 32px;
+  }
+
+  .sysonman {
+    height: 200px;
+  }
+
+  .mail {
+    grid-column-start: 1;
+  }
+
+  @media (max-width: 720px) {
+    .sysonmanContainer {
+      display: flex;
+      margin-top: 40px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 720px) {
+    .contact {
+      flex-direction: row;
+    }
+  }
+</style>

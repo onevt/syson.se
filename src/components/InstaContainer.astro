@@ -1,0 +1,30 @@
+---
+import cameraWithFlash from "../emojis/camera-with-flash.png";
+
+import Emoji from "./Emoji"; // Solid
+---
+
+<section id="insta">
+  <div class="container">
+    <h2>
+      <a href="https://www.instagram.com/syson.se/">@syson.se</a> på Instagram <Emoji
+        src={cameraWithFlash}
+      />
+    </h2>
+  </div>
+  <div class="slot">
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 0;
+  }
+  .slot {
+    height: 50vmax;
+  }
+  .slot > * {
+    height: 100%;
+  }
+</style>

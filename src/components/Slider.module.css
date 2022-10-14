@@ -33,7 +33,7 @@
 }
 
 .handle::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   border-radius: 50%;

@@ -1,0 +1,37 @@
+---
+import logo from "../images/logo-green.png";
+---
+
+<header class="header">
+  <div class="background"></div>
+  <a href="/">
+    <img src={logo} class="logo" alt="Syson Logo" />
+  </a>
+</header>
+
+<style>
+  .logo {
+    width: 150px;
+  }
+
+  .header {
+    padding: 16px;
+    padding-top: 32px;
+  }
+
+  .background {
+    position: absolute;
+    background-color: var(--lily-blue);
+    top: 0;
+    left: 0;
+    height: 58px;
+    width: 100%;
+    z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    .header {
+      padding: 32px;
+    }
+  }
+</style>

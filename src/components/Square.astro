@@ -1,0 +1,90 @@
+---
+import arrow from "../icons/arrow-dark.svg";
+import Emoji from "./Emoji";
+export interface Props {
+  title: string;
+  description: string;
+  emoji: string;
+  url: string;
+  color: string;
+}
+const { emoji, title, description, url, color } = Astro.props;
+---
+
+<a href={url} class:list={[color, "square"]}>
+  <div class="content">
+    <div>
+      <p class="emoji">
+        <Emoji src={emoji} />
+      </p>
+      <h3 class="title">{title}</h3>
+    </div>
+    <div class="link">
+      <span class="linkText">{description}</span>{" "}
+      <img src={arrow} alt="" />
+    </div>
+  </div>
+</a>
+
+<style>
+  .square {
+    border-radius: 8px;
+    display: flex;
+    height: 364px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: transform 150ms;
+  }
+  .square:hover {
+    transform: scale(1.025);
+  }
+
+  .tradewind {
+    background-color: var(--tradewind);
+  }
+
+  .cashmere {
+    background-color: var(--cashmere);
+  }
+
+  .citrus {
+    background-color: var(--citrus);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 32px;
+    flex: 1;
+  }
+
+  .link {
+    text-decoration: none;
+    color: var(--mirage) !important;
+    text-decoration: underline;
+  }
+
+  .title {
+    color: var(--mirage) !important;
+  }
+
+  .emoji {
+    font-size: 96px;
+    text-align: center;
+    margin: 0;
+  }
+
+  @media (min-width: 600px) {
+    .square {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .square {
+      margin-bottom: 0;
+    }
+  }
+</style>

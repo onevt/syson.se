@@ -1,9 +1,9 @@
 # Syson.se 🐸
 
 - Hostas på [Netlify](https://www.netlify.com/).
-- Skapad med [create-react-app](https://github.com/facebook/create-react-app)
+- Skapad med [Astro](https://astro.build/) och [SolidJS](https://www.solidjs.com/)
 
-- Deployas automatiskt till produktion när kod pushas till master
+- Deployas automatiskt till produktion när kod pushas till main
 
 - Joina #hemsidan på Slack om du vill diskutera eller bidra
 
@@ -11,11 +11,5 @@
 
 ```
 npm install
-npm start
-```
-
-## Förutsättningar
-
-```
-node >= 16.3.0 rekommenderas
+npm run dev
 ```

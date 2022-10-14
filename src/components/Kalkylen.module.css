@@ -10,9 +10,9 @@
 }
 
 .title {
-  font-family: 'ibm-plex-mono', monospace, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: "ibm-plex-mono", monospace, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 24px;
 }
 
@@ -25,14 +25,33 @@
   width: 150px;
   text-align: right;
   font-size: 18px;
-  font-family: 'ibm-plex-mono', monospace, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: "ibm-plex-mono", monospace, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 .input:focus {
   border: solid 1px var(--tradewind);
   outline: none;
+}
+
+.resultInputValue {
+  color: var(--mirage);
+  border: 0;
+  outline: none;
+  background: unset;
+  font-weight: 700;
+  font-size: 1.1em;
+  height: 100%;
+  font-family: "ibm-plex-mono", monospace, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  padding-right: 0.5em;
+}
+.resultInputValue::-webkit-outer-spin-button,
+.resultInputValue::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .inputSmall {

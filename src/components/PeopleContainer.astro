@@ -1,0 +1,25 @@
+---
+import rockSign from "../emojis/rock-sign.png";
+import Emoji from "../components/Emoji";
+---
+
+<section id="syson">
+  <div class="container">
+    <h2>
+      Vi är Syson <Emoji src={rockSign} />
+    </h2>
+  </div>
+
+  <div class="slot">
+    <slot />
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--cashmere);
+  }
+  .slot {
+    min-height: 432px; /* approximate height of rendered slot */
+  }
+</style>
