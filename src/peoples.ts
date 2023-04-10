@@ -63,9 +63,9 @@ export default shuffle(
     {
       name: "Leo Danielsson",
       profileUrl:
-        "https://docs.google.com/document/d/1vFr4LHEOGgcXI5rXEM2cgqzS_5AuhiwJI1I-ex6oEGU/edit?usp=sharing",
+        "https://docs.google.com/document/d/172NvQgKH1xIx-UTDcIwtFDDgKeEYaOn-OFsf4MCiNm8/edit?usp=sharing",
       image: "leo.jpg",
-      quote: "JS / Java",
+      quote: "JS / React",
     },
     {
       name: "Anton Söderstedt",
@@ -82,13 +82,6 @@ export default shuffle(
       quote: "Testautomatisering / Java",
     },
     {
-      name: "Joakim Gordillo",
-      profileUrl:
-        "https://docs.google.com/document/d/119PGfv9tjTpKQMSwPT3PmaXOFVaL42S6tnTqov3hPEo/edit?usp=sharing",
-      image: "joakim.jpg",
-      quote: "Node / JS",
-    },
-    {
       name: "Soroush Hakami",
       profileUrl:
         "https://docs.google.com/document/d/1zhhJQneniBod_kk54PkmVA6cbL6GabbR5sgHmVkju4o/edit?usp=sharing",
@@ -99,7 +92,7 @@ export default shuffle(
     {
       name: "Love Gehlin",
       profileUrl:
-        "https://docs.google.com/document/d/1rk1qTNxWkkgRCP6aTH_8Wj_mJsv1GfKWqORRGdz1sWA/edit?usp=sharing",
+        "https://docs.google.com/document/d/1G5nqrnYOWyYFlL1kPp0h4kwzgaqXPl9Cq66-bDQqECE/edit#",
       image: "love.jpg",
       quote: "JS / Java",
     },
@@ -119,6 +112,8 @@ export default shuffle(
     },
     {
       name: "Denny Johansson",
+      profileUrl:
+        "https://docs.google.com/document/d/1annUyp0YVi2rzEDNbcLQL3BTlRAfgyHEtKRTcCJBBbY/edit?usp=sharing",
       image: "denny.jpg",
       quote: "JS / React",
     },
@@ -149,6 +144,20 @@ export default shuffle(
         "https://docs.google.com/document/d/1eNJre_NsDYioSvKQHmQQMjRHUg52Jd-iZuPg233Ao9g/edit?usp=sharing",
       image: "dimitris.jpg",
       quote: "JS / .NET",
+    },
+    {
+      name: "Edvin Lundberg",
+      profileUrl:
+        "https://docs.google.com/document/d/1intPOtGY2aNpBjQJ9q6vWDXzk5SIgSxAQzM3Kjj8ucA/edit?usp=sharing",
+      image: "edvin.jpg",
+      quote: "JS / Java",
+    },
+    {
+      name: "Michaela Bång",
+      profileUrl:
+        "https://docs.google.com/document/d/1zHAKhsHYDRLgfF9lTrQuT7BOBc97owk1MLKxEPk791Q/edit?usp=sharing",
+      image: "michaela.jpg",
+      quote: "JS / React",
     },
   ])
 );

@@ -11,16 +11,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/prefetch": "^0.0.8",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/solid-js": "^1.1.1",
-    "astro": "^1.4.6",
-    "astro-compress": "^1.0.11",
-    "solid-js": "^1.5.7"
+    "@astrojs/prefetch": "^0.2.1",
+    "@astrojs/sitemap": "^1.2.2",
+    "@astrojs/solid-js": "^2.1.0",
+    "@astrojs/vercel": "^3.2.2",
+    "astro": "^2.2.1",
+    "astro-compress": "^1.1.35",
+    "solid-js": "^1.7.3"
   },
   "devDependencies": {
-    "astro-robots-txt": "^0.3.10",
-    "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.5.5"
+    "astro-robots-txt": "^0.4.1",
+    "prettier": "^2.8.7",
+    "prettier-plugin-astro": "^0.8.0"
   }
 }

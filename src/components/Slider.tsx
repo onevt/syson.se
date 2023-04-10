@@ -56,13 +56,17 @@ export const Slider = ({
   };
 
   onMount(() => {
-    document.addEventListener("mouseup", mouseUp);
-    document.addEventListener("mousemove", mouseMove);
+    if (typeof document !== "undefined") {
+      document.addEventListener("mouseup", mouseUp);
+      document.addEventListener("mousemove", mouseMove);
+    }
   });
 
   onCleanup(() => {
-    document.removeEventListener("mouseup", mouseUp);
-    document.removeEventListener("mousemove", mouseMove);
+    if (typeof document !== "undefined") {
+      document.removeEventListener("mouseup", mouseUp);
+      document.removeEventListener("mousemove", mouseMove);
+    }
   });
 
   const handleTouchMove = (event: TouchEvent) => {

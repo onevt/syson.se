@@ -6,6 +6,13 @@
   min-width: 100%;
 }
 
+.bio {
+  display: flex;
+  flex-direction: column;
+  min-height: 2em;
+  align-self: end;
+}
+
 .allPeople {
   display: grid;
   grid-template-columns: 1fr;
@@ -44,7 +51,6 @@
     rgba(0, 0, 0, 0.2) 80%,
     rgba(0, 0, 0, 0)
   );
-  padding: 8px;
   padding-top: 16px;
 }
 
@@ -84,6 +90,7 @@
 
 .quote {
   margin-bottom: 8px;
+  padding-left: 0.5em;
 }
 
 .link {
@@ -95,6 +102,11 @@
 
 .linkText {
   text-decoration: underline;
+  padding-right: 0.5em;
+}
+
+.arrow {
+  padding-right: 0.5em;
 }
 
 .space {

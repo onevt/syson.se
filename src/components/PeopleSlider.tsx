@@ -1,6 +1,6 @@
 import styles from "./People.module.css";
-import arrow from "../icons/arrow.svg";
 import type { IPerson } from "../peoples";
+import { Link } from "./People";
 import type { Accessor } from "solid-js";
 import {
   onMount,
@@ -9,17 +9,6 @@ import {
   createEffect,
   Signal,
 } from "solid-js";
-
-const Link = ({ url, title }: { url: string; title: string }) => (
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    classList={{ [styles.link]: true, [styles.highlight]: true }}
-  >
-    <span class={styles.linkText}>{title}</span> <img src={arrow} alt="" />
-  </a>
-);
 
 const PeopleSlider = ({ people }: { people: Accessor<IPerson[]> }) => {
   const [touchDevice, setTouchDevice] = createSignal(true);
@@ -39,15 +28,19 @@ const PeopleSlider = ({ people }: { people: Accessor<IPerson[]> }) => {
   });
 
   createEffect(() => {
+    highlightCenter();
     if (touchDevice()) {
-      highlightCenter();
+      peopleParentRef?.addEventListener("scroll", highlightCenter);
     }
   });
 
   const highlightCenter = () => {
     const personRenderWidth = peopleElementsRefs[0].offsetWidth;
-    const peopleOnScreen = peopleParentRef!.offsetWidth / personRenderWidth;
+    const peopleOnScreen =
+      (peopleParentRef!.scrollLeft * 2 + peopleParentRef!.offsetWidth) /
+      personRenderWidth;
     const center = Math.floor(peopleOnScreen / 2);
+
     setHighlightedPerson(people()[center]);
   };
 
@@ -82,14 +75,14 @@ const PeopleSlider = ({ people }: { people: Accessor<IPerson[]> }) => {
             >
               {person.name}
             </div>
-            <div class={styles.bottomDetails}>
-              <div
-                classList={{ [styles.quote]: true, [styles.highlight]: true }}
-              >
-                {person.quote}
-              </div>
+            <div class={styles.quote}>{person.quote && person.quote}</div>
+            <div class={styles.bio}>
               {person.linkedInUrl && (
-                <Link url={person.linkedInUrl} title="LinkedIn" />
+                <Link
+                  url={person.linkedInUrl}
+                  title="LinkedIn"
+                  target="_blank"
+                />
               )}
               {person?.profileUrl && (
                 <Link url={person.profileUrl} title="Profil" />

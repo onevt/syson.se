@@ -4,16 +4,30 @@ import styles from "./People.module.css";
 import PeopleSlider from "./PeopleSlider";
 import allPeople from "../peoples";
 
-const Link = ({ url, title }: { url: string; title: string }) => (
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    classList={{ [styles.link]: true, [styles.highlight]: true }}
-  >
-    <span class={styles.linkText}>{title}</span> <img src={arrow} alt="" />
-  </a>
-);
+export const Link = ({
+  url,
+  title,
+  rel,
+  target = "_self",
+}: {
+  url: string;
+  title: string;
+  rel?: string;
+  target?: string;
+}) => {
+  rel = rel ? `${rel} noopener noreferrer` : "noopener noreferrer";
+  return (
+    <a
+      href={url}
+      target={target}
+      rel={rel}
+      classList={{ [styles.link]: true, [styles.highlight]: true }}
+    >
+      <span class={styles.linkText}>{title}</span>
+      <img class={styles.arrow} src={arrow} alt="" />
+    </a>
+  );
+};
 
 const People = () => {
   const people = createMemo(() => allPeople);
@@ -41,7 +55,11 @@ const People = () => {
                 <div class={styles.bottomDetails}>
                   <div class={styles.quote}>{person.quote}</div>
                   {person.linkedInUrl && (
-                    <Link url={person.linkedInUrl} title="LinkedIn" />
+                    <Link
+                      url={person.linkedInUrl}
+                      title="LinkedIn"
+                      target="_blank"
+                    />
                   )}
                   {person.profileUrl && (
                     <Link url={person.profileUrl} title="Profil" />

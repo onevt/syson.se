@@ -11,7 +11,7 @@ export interface Props {
 const { emoji, title, description, url, color } = Astro.props;
 ---
 
-<a href={url} class:list={[color, "square"]}>
+<a href={url} rel="prefetch" class:list={[color, "square"]}>
   <div class="content">
     <div>
       <p class="emoji">

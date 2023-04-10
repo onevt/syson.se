@@ -15,7 +15,7 @@ type InstaData = {
 
 const fetchPosts = async () => {
   const response = await fetch(
-    "https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,media_type,thumbnail_url&access_token=IGQVJVVlVKaklYRDNtWUI5MzJBZATUwVGhDUFNad0pBRmo0MG9UTHNCY3VNUEZAxODV4MUNtTHdaNkZA1dGVqUXVJUldnT1NrQndhUURNQk5oa2Y5dzVOYlh1MUZAMZA1hwVjlldmJmUHZAR",
+    "https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,media_type,thumbnail_url&access_token=IGQVJVZAlpRUG5pUU04MldkYlR0R2lPcUEtTEhwUlZANYlZAzemp6TW5aX05jam9CbmFoYVZAyMXVjMDQ1aWlEYjFOU2NWVU82RzFtS19aTkN2XzRvbGtZAeDFTc2N6X1Q1T1dwVGJmaWtrLVJWQ3R0WkZAkeQZDZD",
     { headers: { Accept: "application/json" } }
   );
   const json = await response.json();
